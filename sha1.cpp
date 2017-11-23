@@ -4,12 +4,11 @@
 
 int main(){
 	// The data to be hashed
-	const unsigned char data[] = "Hello, world!";
+	const unsigned char data[] = "Notre phrase hashée!!";
 	size_t length = sizeof(data);
-
 	unsigned char hash[SHA_DIGEST_LENGTH];
+        
 	SHA1(data, length, hash);
-
 
 	char mdString[SHA_DIGEST_LENGTH];
 	 
@@ -17,7 +16,6 @@ int main(){
            sprintf(&mdString[i*2], "%02x", (unsigned int)hash[i]);
  
     	printf("sha1 digest: %s\n", mdString);
-
 
 	return 0;
 }
